@@ -42,6 +42,7 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.lblTijdWeergave = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnLeesDataDecoupled = new System.Windows.Forms.Button();
             this.btnDeselecteerRecords = new System.Windows.Forms.Button();
             this.btnVerwijderRecordPV = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
@@ -60,7 +61,6 @@
             this.tmrKlokTimer = new System.Windows.Forms.Timer(this.components);
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblSqlVerbindingsStatus = new System.Windows.Forms.ToolStripStatusLabel();
-            this.btnLeesDataDecoupled = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -135,7 +135,7 @@
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1210, 481);
+            this.dataGridView1.Size = new System.Drawing.Size(1210, 464);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
@@ -146,7 +146,7 @@
             this.btnLeesData.Name = "btnLeesData";
             this.btnLeesData.Size = new System.Drawing.Size(156, 55);
             this.btnLeesData.TabIndex = 6;
-            this.btnLeesData.Text = "Lees data\r\nuit ITProDB";
+            this.btnLeesData.Text = "Lees data\r\nuit ITProDB met reader";
             this.btnLeesData.UseVisualStyleBackColor = true;
             this.btnLeesData.Click += new System.EventHandler(this.btnLeesData_Click);
             // 
@@ -174,10 +174,10 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(7, 12);
+            this.tabControl1.Location = new System.Drawing.Point(0, 3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1241, 617);
+            this.tabControl1.Size = new System.Drawing.Size(1253, 651);
             this.tabControl1.TabIndex = 10;
             // 
             // tabPage1
@@ -190,7 +190,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 28);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1233, 585);
+            this.tabPage1.Size = new System.Drawing.Size(1245, 619);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "MySQL OPEN/CLOSE verbinding";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -217,16 +217,26 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 28);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1233, 585);
+            this.tabPage2.Size = new System.Drawing.Size(1245, 619);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "MySQL SELECT/DELETE met DataGridView";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // btnLeesDataDecoupled
+            // 
+            this.btnLeesDataDecoupled.Location = new System.Drawing.Point(319, 493);
+            this.btnLeesDataDecoupled.Name = "btnLeesDataDecoupled";
+            this.btnLeesDataDecoupled.Size = new System.Drawing.Size(181, 55);
+            this.btnLeesDataDecoupled.TabIndex = 12;
+            this.btnLeesDataDecoupled.Text = "Lees data uit ITProDB\r\nmet MySqlDataAdapter";
+            this.btnLeesDataDecoupled.UseVisualStyleBackColor = true;
+            this.btnLeesDataDecoupled.Click += new System.EventHandler(this.btnLeesDataDecoupled_Click);
+            // 
             // btnDeselecteerRecords
             // 
-            this.btnDeselecteerRecords.Location = new System.Drawing.Point(1065, 494);
+            this.btnDeselecteerRecords.Location = new System.Drawing.Point(1038, 495);
             this.btnDeselecteerRecords.Name = "btnDeselecteerRecords";
-            this.btnDeselecteerRecords.Size = new System.Drawing.Size(151, 64);
+            this.btnDeselecteerRecords.Size = new System.Drawing.Size(178, 54);
             this.btnDeselecteerRecords.TabIndex = 11;
             this.btnDeselecteerRecords.Text = "Deselecteer\r\nrecords";
             this.btnDeselecteerRecords.UseVisualStyleBackColor = true;
@@ -235,9 +245,9 @@
             // btnVerwijderRecordPV
             // 
             this.btnVerwijderRecordPV.Enabled = false;
-            this.btnVerwijderRecordPV.Location = new System.Drawing.Point(908, 493);
+            this.btnVerwijderRecordPV.Location = new System.Drawing.Point(852, 495);
             this.btnVerwijderRecordPV.Name = "btnVerwijderRecordPV";
-            this.btnVerwijderRecordPV.Size = new System.Drawing.Size(151, 65);
+            this.btnVerwijderRecordPV.Size = new System.Drawing.Size(180, 55);
             this.btnVerwijderRecordPV.TabIndex = 10;
             this.btnVerwijderRecordPV.Text = "Verwijder geselecteerd\r\nrecords";
             this.btnVerwijderRecordPV.UseVisualStyleBackColor = true;
@@ -250,7 +260,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 28);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1233, 585);
+            this.tabPage3.Size = new System.Drawing.Size(1245, 619);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "MySQL INSERT/DELETE/UPDATE met TextBox en ComboBox";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -382,9 +392,9 @@
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblSqlVerbindingsStatus});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 646);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 657);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1249, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1253, 22);
             this.statusStrip1.TabIndex = 11;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -397,21 +407,11 @@
             this.lblSqlVerbindingsStatus.Text = "SQL-verbinding";
             this.lblSqlVerbindingsStatus.Visible = false;
             // 
-            // btnLeesDataDecoupled
-            // 
-            this.btnLeesDataDecoupled.Location = new System.Drawing.Point(319, 493);
-            this.btnLeesDataDecoupled.Name = "btnLeesDataDecoupled";
-            this.btnLeesDataDecoupled.Size = new System.Drawing.Size(181, 55);
-            this.btnLeesDataDecoupled.TabIndex = 12;
-            this.btnLeesDataDecoupled.Text = "Lees data uit ITProDB\r\nmet MySqlDataAdapter";
-            this.btnLeesDataDecoupled.UseVisualStyleBackColor = true;
-            this.btnLeesDataDecoupled.Click += new System.EventHandler(this.btnLeesDataDecoupled_Click);
-            // 
             // ITProDBManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1249, 668);
+            this.ClientSize = new System.Drawing.Size(1253, 679);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.tabControl1);
             this.Name = "ITProDBManager";
